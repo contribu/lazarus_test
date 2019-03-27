@@ -1,0 +1,29 @@
+object Form1: TForm1
+  Left = 314
+  Height = 460
+  Top = 127
+  Width = 566
+  AllowDropFiles = True
+  AlphaBlendValue = 128
+  Caption = 'Form1'
+  ClientHeight = 460
+  ClientWidth = 566
+  OnDropFiles = FormDropFiles
+  LCLVersion = '2.0.0.4'
+  object ListBox1: TListBox
+    Left = 24
+    Height = 80
+    Top = 24
+    Width = 100
+    ItemHeight = 0
+    TabOrder = 0
+  end
+  object ListBox2: TListBox
+    Left = 168
+    Height = 80
+    Top = 136
+    Width = 100
+    ItemHeight = 0
+    TabOrder = 1
+  end
+end
