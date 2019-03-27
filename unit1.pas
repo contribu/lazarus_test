@@ -14,6 +14,7 @@ type
   TForm1 = class(TForm)
     ListBox1: TListBox;
     ListBox2: TListBox;
+    Memo1: TMemo;
     procedure FormDropFiles(Sender: TObject; const FileNames: array of String);
   private
 

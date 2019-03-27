@@ -26,4 +26,14 @@ object Form1: TForm1
     ItemHeight = 0
     TabOrder = 1
   end
+  object Memo1: TMemo
+    Left = 77
+    Height = 240
+    Top = 114
+    Width = 315
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 2
+  end
 end

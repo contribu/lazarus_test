@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: taraworks/lazarus-cross:0.0.2
+    working_directory: /repo
+    steps:
+      - checkout
+      - run: mkdir -p /tmp/results/
+      - run:
+          name: build
+          command: |
+            echo http://wiki.lazarus.freepascal.org/Cross_compiling#From_within_Docker_container
+            echo http://wiki.lazarus.freepascal.org/lazbuild
+
+            export PATH=$PATH:/opt/clang/bin:/opt/osxcross/target/bin
+
+            lazbuild "--compiler=/opt/windows/lib/fpc/3.0.4/ppcross386" --widgetset=win32 --os=win32 ./project1.lpr
+            cp project1.exe /tmp/results/project1_win.exe
+
+            # lazbuild "--compiler=/opt/windows/lib/fpc/3.0.4/ppcross386" --widgetset=carbon --os=darwin ./project1.lpr
+            # cp project1 /tmp/results/project1_darwin
+
+            lazbuild --widgetset=gtk2 --os=linux ./project1.lpr
+            cp project1 /tmp/results/project1_linux
+      - store_artifacts:
+          path: /tmp/results
+          destination: results
+
