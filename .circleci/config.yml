@@ -18,6 +18,7 @@ jobs:
             lazbuild "--compiler=/opt/windows/lib/fpc/3.0.4/ppcross386" --widgetset=win32 --os=win32 ./project1.lpr
             cp project1.exe /tmp/results/project1_win.exe
 
+            # ビルドできなかった。macのファイルを与える必要があるらしい
             # lazbuild "--compiler=/opt/windows/lib/fpc/3.0.4/ppcross386" --widgetset=carbon --os=darwin ./project1.lpr
             # cp project1 /tmp/results/project1_darwin
 
